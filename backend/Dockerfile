@@ -13,6 +13,8 @@ RUN addgroup -g 1001 -S nodejs && \
     adduser -S backend -u 1001 -G nodejs
 
 RUN chown -R backend:nodejs /usr/src/app
+RUN chmod -R +x node_modules/.bin
+
 USER backend
 
 EXPOSE 5000
