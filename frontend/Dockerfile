@@ -13,7 +13,8 @@ RUN npm ci --only=production
 COPY . .
 
 
-RUN npm run build
+RUN chmod -R +x node_modules/.bin && \
+    npm run build
 
 
 FROM nginx:alpine
